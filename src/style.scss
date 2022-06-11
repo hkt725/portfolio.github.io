@@ -123,7 +123,7 @@ body {
 	Component
 \* -------------------------- */
 .nav-logo {
-  background-image: url(../dist/title.svg);
+  background-image: url("../dist/title.svg");
   @include background(contain);
   z-index: 9999;
   width: 220px;
@@ -177,7 +177,7 @@ body {
     background: $green;
     height: 100px;
     .marquee{
-      background-image: url(../dist/marquee.svg);
+      background-image: url("../dist/marquee.svg");
       @include background(cover);
       height: 90%;
       top: 50%;
@@ -278,29 +278,29 @@ body {
 	About
 \* -------------------------- */
 .eye{
-  background-image: url(../dist/eye.svg);
+  background-image: url("../dist/eye.svg");
 }
 .web{
-  background-image: url(../dist/window.svg);
+  background-image: url("../dist/window.svg");
 }
 .brain{
-  background-image: url(../dist/brain.svg);
+  background-image: url("../dist/brain.svg");
 }
 .cat{
-  background-image: url(../dist/cat.svg);
+  background-image: url("../dist/cat.svg");
 }
 .dog{
-  background-image: url(../dist/dog.svg);
+  background-image: url("../dist/dog.svg");
 }
 .about{
   .about-title {
     z-index: 99;
     margin-top: 40px;
-    background-image: url(../dist/title.svg);
+    background-image: url("../dist/title.svg");
     @include background(contain);
     width: 35vw;
     height: 8vw;
-    cursor: url(../dist/kai.png) 36 36, auto;
+    cursor: url("../dist/kai.png") 36 36, auto;
     --cursor-size: 100px;
     
   }
@@ -316,7 +316,7 @@ body {
       width: 8vw;
       display: inline-block;
       transform: translate(0, 30%);
-      cursor: url(../dist/click.svg) 36 36, pointer ;
+      cursor: url("../dist/click.svg") 36 36, pointer ;
       z-index: 1;
     }
   }
@@ -333,43 +333,43 @@ body {
   
   .work-box{
     &--0{
-      background-image: url(../dist/work/web/block.png);
+      background-image: url("../dist/work/web/block.png");
     }
     &--1{
-      background-image: url(../dist/work/web/one-catty.png);
+      background-image: url("../dist/work/web/one-catty.png");
     }
     &--2{
-      background-image: url(../dist/work/web/portfolio.png);
+      background-image: url("../dist/work/web/portfolio.png");
     }
     &--3{
-      background-image: url(../dist/work/web/rwd.png);
+      background-image: url("../dist/work/web/rwd.png");
     }
     &--4{
-      background-image: url(../dist/work/web/cafe-nomad.png);
+      background-image: url("../dist/work/web/cafe-nomad.png");
     }
     &--5{
-      background-image: url(../dist/work/web/c.png);
+      background-image: url("../dist/work/web/c.png");
     }
     &--6{
-      background-image: url(../dist/work/graphic/taipei.png);
+      background-image: url("../dist/work/graphic/taipei.png");
     }
     &--7{
-      background-image: url(../dist/work/graphic/icon.png);
+      background-image: url("../dist/work/graphic/icon.png");
     }
     &--8{
-      background-image: url(../dist/work/graphic/book.png);
+      background-image: url("../dist/work/graphic/book.png");
     }
     &--9{
-      background-image: url(../dist/work/graphic/font.png);
+      background-image: url("../dist/work/graphic/font.png");
     }
     &--10{
-      background-image: url(../dist/work/graphic/farm.png);
+      background-image: url("../dist/work/graphic/farm.png");
     }
     &--11{
-      background-image: url(../dist/work/graphic/vagina.png);
+      background-image: url("../dist/work/graphic/vagina.png");
     }
     &--12{
-      background-image: url(../dist/work/toast.png);
+      background-image: url("../dist/work/toast.png");
     }
   }
 
@@ -393,7 +393,7 @@ body {
       background-color: $green;
       text-align: center;
       .title-svg{
-        background-image: url(../dist/work-title.svg);
+        background-image: url("../dist/work-title.svg");
         @include background(contain);
         height: 70%;
         width: 70%;
@@ -418,7 +418,7 @@ body {
       }
     }
     .work-link{
-      background-image: url(../dist/link.svg);
+      background-image: url("../dist/link.svg");
       @include background(contain);
       width: 120px;
       height: 120px;
@@ -655,7 +655,7 @@ input {
   .contact-title{
     z-index: 99;
     background-color: $green;
-    background-image: url(../dist/contact.svg);
+    background-image: url("../dist/contact.svg");
     @include background(50vw);
     @include border();
     background-position: 60px;
@@ -686,7 +686,7 @@ input {
           padding: 0;
           border-radius: 0; 
           a{
-            background-image: url(../dist/behance.svg);
+            background-image: url("../dist/behance.svg");
             @include background(contain);
             min-height: 7vw;
             min-width: 7vw;
@@ -697,7 +697,7 @@ input {
           padding: 0;
           border-radius: 0; 
           a{
-            background-image: url(../dist/linkedln.svg);
+            background-image: url("../dist/linkedln.svg");
             @include background(contain);
             min-height: 7vw;
             min-width: 7vw;
@@ -711,7 +711,7 @@ input {
       height: 100%;
       width: 40%;
       .vector{
-        background-image: url(../dist/closeeye.svg);
+        background-image: url("../dist/closeeye.svg");
         @include background(contain);
         width: 60%;
         height: 60%;
@@ -720,7 +720,7 @@ input {
         &.active{
         height: 100%;
 
-          background-image: url(../dist/openeye.svg);
+          background-image: url("../dist/openeye.svg");
         }
       }
     }
