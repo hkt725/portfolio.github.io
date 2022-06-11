@@ -1,4 +1,15 @@
-
+// let scrollY = window.scrollY
+//     const tween = gsap.timeline()
+//     // 
+//     tween.to( addWebs(), scrollTrigger: {
+//     scrub:true,
+//     trigger: ".section-2",
+//     duration: {min: 0.2, max: 3}, 
+//     ease: "power0.inOut",
+//     start: "40% 90%",
+//     end: "100% 90%",
+//     },
+// }) 
 let works = [
     {
         class: 'work-box--0',

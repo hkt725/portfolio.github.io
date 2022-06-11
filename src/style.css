@@ -95,7 +95,7 @@ body {
 	Component
 \* -------------------------- */
 .nav-logo {
-  background-image: url(/dist/title.svg);
+  background-image: url(../dist/title.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -166,7 +166,7 @@ body {
 }
 
 .wrapper .marquee-box .marquee {
-  background-image: url(/dist/marquee.svg);
+  background-image: url(../dist/marquee.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -292,35 +292,35 @@ body {
 	About
 \* -------------------------- */
 .eye {
-  background-image: url(/dist/eye.svg);
+  background-image: url(../dist/eye.svg);
 }
 
 .web {
-  background-image: url(/dist/window.svg);
+  background-image: url(../dist/window.svg);
 }
 
 .brain {
-  background-image: url(/dist/brain.svg);
+  background-image: url(../dist/brain.svg);
 }
 
 .cat {
-  background-image: url(/dist/cat.svg);
+  background-image: url(../dist/cat.svg);
 }
 
 .dog {
-  background-image: url(/dist/dog.svg);
+  background-image: url(../dist/dog.svg);
 }
 
 .about .about-title {
   z-index: 99;
   margin-top: 40px;
-  background-image: url(/dist/title.svg);
+  background-image: url(../dist/title.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   width: 35vw;
   height: 8vw;
-  cursor: url(/dist/kai.png) 36 36, auto;
+  cursor: url(../dist/kai.png) 36 36, auto;
   --cursor-size: 100px;
 }
 
@@ -341,7 +341,7 @@ body {
   display: inline-block;
   -webkit-transform: translate(0, 30%);
           transform: translate(0, 30%);
-  cursor: url(/dist/click.svg) 36 36, pointer;
+  cursor: url(../dist/click.svg) 36 36, pointer;
   z-index: 1;
 }
 
@@ -360,55 +360,55 @@ body {
 }
 
 .work-container .work-box--0 {
-  background-image: url(/dist/work/web/block.png);
+  background-image: url(../dist/work/web/block.png);
 }
 
 .work-container .work-box--1 {
-  background-image: url(/dist/work/web/one-catty.png);
+  background-image: url(../dist/work/web/one-catty.png);
 }
 
 .work-container .work-box--2 {
-  background-image: url(/dist/work/web/portfolio.png);
+  background-image: url(../dist/work/web/portfolio.png);
 }
 
 .work-container .work-box--3 {
-  background-image: url(/dist/work/web/rwd.png);
+  background-image: url(../dist/work/web/rwd.png);
 }
 
 .work-container .work-box--4 {
-  background-image: url(/dist/work/web/cafe-nomad.png);
+  background-image: url(../dist/work/web/cafe-nomad.png);
 }
 
 .work-container .work-box--5 {
-  background-image: url(/dist/work/web/c.png);
+  background-image: url(../dist/work/web/c.png);
 }
 
 .work-container .work-box--6 {
-  background-image: url(/dist/work/graphic/taipei.png);
+  background-image: url(../dist/work/graphic/taipei.png);
 }
 
 .work-container .work-box--7 {
-  background-image: url(/dist/work/graphic/icon.png);
+  background-image: url(../dist/work/graphic/icon.png);
 }
 
 .work-container .work-box--8 {
-  background-image: url(/dist/work/graphic/book.png);
+  background-image: url(../dist/work/graphic/book.png);
 }
 
 .work-container .work-box--9 {
-  background-image: url(/dist/work/graphic/font.png);
+  background-image: url(../dist/work/graphic/font.png);
 }
 
 .work-container .work-box--10 {
-  background-image: url(/dist/work/graphic/farm.png);
+  background-image: url(../dist/work/graphic/farm.png);
 }
 
 .work-container .work-box--11 {
-  background-image: url(/dist/work/graphic/vagina.png);
+  background-image: url(../dist/work/graphic/vagina.png);
 }
 
 .work-container .work-box--12 {
-  background-image: url(/dist/work/toast.png);
+  background-image: url(../dist/work/toast.png);
 }
 
 .work-container .works {
@@ -438,7 +438,7 @@ body {
 }
 
 .work-container .work-info .work-title .title-svg {
-  background-image: url(/dist/work-title.svg);
+  background-image: url(../dist/work-title.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -481,7 +481,7 @@ body {
 }
 
 .work-container .work-info .work-link {
-  background-image: url(/dist/link.svg);
+  background-image: url(../dist/link.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -769,7 +769,7 @@ input::placeholder {
 .contact .contact-title {
   z-index: 99;
   background-color: #BDFB0F;
-  background-image: url(/dist/contact.svg);
+  background-image: url(../dist/contact.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50vw;
@@ -820,7 +820,7 @@ input::placeholder {
 }
 
 .contact .contact-box .contacts .box-contact--3 a {
-  background-image: url(/dist/behance.svg);
+  background-image: url(../dist/behance.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -835,7 +835,7 @@ input::placeholder {
 }
 
 .contact .contact-box .contacts .box-contact--4 a {
-  background-image: url(/dist/linkedln.svg);
+  background-image: url(../dist/linkedln.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -852,7 +852,7 @@ input::placeholder {
 }
 
 .contact .contact-box .contact-vector .vector {
-  background-image: url(/dist/closeeye.svg);
+  background-image: url(../dist/closeeye.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -869,6 +869,6 @@ input::placeholder {
 
 .contact .contact-box .contact-vector .vector.active {
   height: 100%;
-  background-image: url(/dist/openeye.svg);
+  background-image: url(../dist/openeye.svg);
 }
 /*# sourceMappingURL=style.css.map */
