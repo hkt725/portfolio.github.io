@@ -1,0 +1,204 @@
+
+
+// Three.js
+let scene, camera, controls, raycaster, mouse, renderer,canvas;
+let model, stands, models, clock, lights;
+let porkStand, vegStand, fruitStand, fishStand, beefStand, chickenStand;
+let porkIconLight, vegIconLight, fruitIconLight, fishIconLight, beefIconLight, chickenIconLight, logoLight;
+let frustumSize, aspect;
+
+// const gui = new dat.GUI()
+
+// window.onpopstate = function(event) {
+//     console.log(document.location)
+//     if(document.location.href === 'http://onetaiwancatty.com/'){
+//         $('#intro').css({"display": "none"});
+//         $('#popup-menu').css({"display": "none"});
+//         camera.position.set( - 120, 100, 200 );
+//         camera.zoom= 0;
+//     }
+// };
+
+init();
+function init() {
+    canvas = document.querySelector('canvas.webgl');
+    frustumSize = 10;
+    aspect = window.innerWidth / window.innerHeight;
+    camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, 1, 1000 );
+    // camera.position.set( 0, 0, 2 );
+    camera.position.set( 0, 0, 6 );
+
+    // gui.add(camera.position, 'x').min(-30).max(30).step(0.1)
+    // gui.add(camera.position, 'y').min(-30).max(30).step(0.1)
+    // gui.add(camera.position, 'z').min(-30).max(30).step(0.1)
+
+    clock = new THREE.Clock();
+    scene = new THREE.Scene();
+    raycaster = new THREE.Raycaster();
+    mouse = new THREE.Vector2();
+
+    const pointLight = new THREE.PointLight(0xffffff,.1);
+    pointLight.position.set( 0, 2, 11 );
+    // gui.add(pointLight.position, 'x').min(-30).max(30).step(0.1)
+    // gui.add(pointLight.position, 'y').min(-30).max(30).step(0.1)
+    // gui.add(pointLight.position, 'z').min(-30).max(30).step(0.1)
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, .5);
+    directionalLight.position.set(2.7, 2, 30);
+    // gui.add(directionalLight.position, 'x').min(-30).max(30).step(0.1)
+    // gui.add(directionalLight.position, 'y').min(-30).max(30).step(0.1)
+    // gui.add(directionalLight.position, 'z').min(-30).max(30).step(0.1)
+
+    directionalLight.castShadow = true;
+    const d = 8;
+    directionalLight.shadow.camera.left = - d;
+    directionalLight.shadow.camera.right = d;
+    directionalLight.shadow.camera.top = d;
+    directionalLight.shadow.camera.bottom = - d;
+    directionalLight.shadow.camera.fov = 45;
+    directionalLight.shadow.camera.aspect = 1;
+    directionalLight.shadow.camera.near = 0.1;
+    directionalLight.shadow.camera.far = 500;
+    directionalLight.shadow.bias = -0.0001;
+    directionalLight.shadow.mapSize.width = 4096;
+    directionalLight.shadow.mapSize.height = 4096;
+    
+    scene.add(directionalLight);
+    scene.add(pointLight);
+
+    
+    // Draco loader
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("/dist/draco/");
+
+    // GLTF loader
+    const gltfLoader = new GLTFLoader();
+    gltfLoader.setDRACOLoader(dracoLoader);
+
+    gltfLoader.load(
+        '/dist/web3d.glb',
+        (gltf) => {
+            model = gltf.scene;
+            // // Get each model
+            // stands = new THREE.Group();
+            // lights = new THREE.Group();
+
+            // standsData.map(function (stand, index, array) {
+            //     stand.name = gltf.scene.children.find((child) => child.name === stand.mesh)
+            //     stands.add(stand.name)
+            // })
+            // console.log(stands)
+
+            // models = new THREE.Group();
+            // models.add(stands, model,lights)
+
+            model.traverse(function (children) {
+                if (children.isLight) {
+                    children.shadow.camera.near = 0.001;
+                    children.shadow.camera.updateProjectionMatrix();
+                }
+                if (children.isMesh) {
+                    children.castShadow = true;
+                    children.receiveShadow = true;
+                }
+            });
+            scene.add(model);
+            tick();
+        }
+    );
+    const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+    };
+    renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        antialias: true,
+        alpha: true  
+    });
+    renderer.physicallyCorrectLights = true;
+    renderer.shadowMap.enabled = true;
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearAlpha(0);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1;
+    renderer.outputEncoding = THREE.sRGBEncoding;
+
+    window.addEventListener('resize', () => {
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+    });
+    // renderer.domElement.addEventListener('pointerup', onClick, false);
+    const environment = new RoomEnvironment();
+    const pmremGenerator = new THREE.PMREMGenerator( renderer );
+
+    scene.environment = pmremGenerator.fromScene(environment).texture;
+    controls = new OrbitControls(camera, canvas) 
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.25;
+    controls.enableZoom = false;
+    // controls.enableRotate = false;
+
+    const minPan = new THREE.Vector3( - .95, - .95, - .95 );
+    const maxPan = new THREE.Vector3( .95, .95, .95 );
+    const _v = new THREE.Vector3();
+    
+    controls.addEventListener("change", function() {
+        _v.copy(controls.target);
+        controls.target.clamp(minPan, maxPan);
+        _v.sub(controls.target);
+        camera.position.sub(_v);
+    })
+};
+const tick = () => {
+    const elapsedTime = clock.getElapsedTime();
+    if (logoLight) { logoLight.rotation.z = elapsedTime * 0.5;} 
+    // Update controls
+    controls.update();
+    let dragX = Math.round((camera.position.x + Number.EPSILON) * 1000) / 1000;      
+    let dragZ = Math.round((camera.position.z + Number.EPSILON) * 1000) / 1000;
+    render();
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick);
+
+};
+function render() {
+    renderer.render( scene, camera );
+}
+// function onClick(event) {
+//     event.preventDefault();
+//     raycaster.setFromCamera(mouse, camera);
+//     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+//     console.log(stands)
+//     const intersects = raycaster.intersectObjects(stands.children, true);
+//     // console.log(intersects)
+//     console.log(intersects[0])
+    
+//     const zoomInTimeline = (x, y, z, zoomOutFactor = 0) => {
+//         let tl = gsap
+//         .timeline({ defaults: { duration: 2.5, ease: "expo.out" } })
+//         .to(controls.target, { x, y, z })
+//         .to(camera.position, { x: x - 3, y: y + 3 , z: z + 20 }, 0)
+//     };
+  
+//     if (intersects.length > 0) {
+//         const zoom = 2.2;
+//         console.log(intersects[0].object.name)
+//         standsData.map(function (stand, index, array) {
+//             if (intersects[0].object.parent.name === stand.mesh) {
+//                 zoomInTimeline(stand.name.position.x + stand.x , stand.name.position.y + stand.y, stand.name.position.z , .1);
+//                 camera.zoom = zoom;
+//                 camera.updateProjectionMatrix();
+//                 $(function () {
+//                     setTimeout(function () {
+//                         $(location).attr('href', stand.href );
+//                     }, 3000);
+//                 })
+//             }   
+//         })
+//     }
+// }

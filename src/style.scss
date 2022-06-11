@@ -1,0 +1,728 @@
+/* -------------------------- *\
+	Globel
+\* -------------------------- */
+* {
+  box-sizing: border-box;
+  position: relative;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+html{
+    background: #000;
+}
+p{
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.webgl{
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+}
+  
+// ** 變數 ** \\
+$light-gray: #d9d9d9;
+$black: #000;
+$white: #fff;
+$green:#BDFB0F;
+$orange:#FE5D26;
+$blue:#0010FF;
+$pink:#F375F7;
+$yellow: #FDF204;
+
+
+
+@mixin background($size) {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+@mixin center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin verticalCenter {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+@mixin horizontalCenter {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+@mixin border {
+  border: 3px solid $white;
+   border-radius: 40px;
+}
+ul,li{
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+h5 {
+  color: $light-gray;
+}
+a {
+  // text-decoration: none;
+  color: $black;
+}
+button{
+  border: 0;
+  background-color: Transparent;
+  outline:none;
+  cursor: pointer;
+}
+// ** 隱藏滾動條 ** \\
+html {
+  overflow: -moz-hidden-unscrollable;
+  scrollbar-width: none;
+  height: 100%;
+  width: 100vw;
+}
+scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  height: 100%;
+  width: 100vw;
+  overflow: auto;
+  // background-color: #000;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  display: none;
+}
+
+::-webkit-scrollbar-button {
+  width: 1px;
+  height: 1px;
+  display: none;
+}
+// ** 隱藏滾動條 ** \\
+/* -------------------------- *\
+	Component
+\* -------------------------- */
+.nav-logo {
+  background-image: url(/dist/title.svg);
+  @include background(contain);
+  z-index: 9999;
+  width: 220px;
+  height: 40px;
+}
+.btn-box{
+  text-align: center;
+  color: $white;
+  // height: 44px;
+  display: flex;
+  align-items: center;
+
+  font-size: 24px;
+  margin-right: 25px;
+
+  &.active{
+    color: $green;
+  }
+  .btn-link{
+    transform: translate(0,10%);
+  }
+}
+/* -------------------------- *\
+	Layout
+\* -------------------------- */
+.wrapper {
+  height: 100%;
+  width: 100%;
+  .section{
+    width: 100%;
+    &-1{
+      @include border();
+      margin-top: 97px;
+      height: 120%;
+      background: rgb(217,217,217);
+      // background: linear-gradient(180deg, rgba(217,217,217,1) 0%, rgba(217,217,217,1) 40%, rgba(217,255,137,1) 60%, rgba(217,255,137,1) 100%);
+      background: $black;
+      overflow: hidden;
+    }
+    &-2{
+      background: $black;
+      overflow: hidden;
+    }
+    &-3{
+      height: calc(100% - 97px);
+      overflow: hidden;
+    }
+  }
+  .marquee-box{
+    @include border();
+    background: $green;
+    height: 100px;
+    .marquee{
+      background-image: url(/dist/marquee.svg);
+      @include background(cover);
+      height: 90%;
+      top: 50%;
+      @include horizontalCenter();
+      position: relative;
+    }
+  }
+  .container{
+    padding: 60px;
+  }
+}
+/* -------------------------- *\
+	Nav
+\* -------------------------- */
+.navbar {
+  top: 0;
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  z-index: 10001;
+  padding: 40px 60px;
+  border: 3px solid #fff;
+  border-radius: 40px;
+  background: $black;
+  .nav-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .nav{
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  /* menu-toggle */
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding-right: 20px;
+    transform: translate(0%, -50%);
+    span {
+      // float: right;
+      display: block;
+      /* span預設inline */
+      width: 20px;
+      height: 2px;
+      background-color: $white;
+      &:nth-child(1) {
+        top: 35%;
+      }
+
+      &:nth-child(2) {
+        top: 60%;
+      }
+    }
+  }
+}
+#popup-menu:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* close-btn */
+
+.navbar .close-btn {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  right: 8px;
+  top: 4px;
+  display: inline-block;
+}
+
+.navbar .close-btn span {
+  display: block;
+  /* span預設inline */
+  width: 20px;
+  height: 2px;
+  background-color: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.navbar .close-btn span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.navbar .close-btn span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* -------------------------- *\
+	About
+\* -------------------------- */
+.eye{
+  background-image: url(/dist/eye.svg);
+}
+.web{
+  background-image: url(/dist/window.svg);
+}
+.brain{
+  background-image: url(/dist/brain.svg);
+}
+.cat{
+  background-image: url(/dist/cat.svg);
+}
+.dog{
+  background-image: url(/dist/dog.svg);
+}
+.about{
+  .about-title {
+    z-index: 99;
+    margin-top: 40px;
+    background-image: url(/dist/title.svg);
+    @include background(contain);
+    width: 35vw;
+    height: 8vw;
+    cursor: url(/dist/kai.png) 36 36, auto;
+    --cursor-size: 100px;
+    
+  }
+  .about-para{
+    color: $white;
+    margin-top: 40px;
+    font-size: 2.3vw;
+    font-weight: 500;
+    line-height: 2;
+    .about-item{
+      @include background(contain);
+      height: 3vw;
+      width: 8vw;
+      display: inline-block;
+      transform: translate(0, 30%);
+      cursor: url(/dist/click.svg) 36 36, pointer ;
+      z-index: 1;
+    }
+  }
+}
+/* -------------------------- *\
+	Work
+\* -------------------------- */
+.work-container{
+  height: calc(100% - 100px);
+  background: #000;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  
+  .work-box{
+    &--0{
+      background-image: url(/dist/work/web/block.png);
+    }
+    &--1{
+      background-image: url(/dist/work/web/one-catty.png);
+    }
+    &--2{
+      background-image: url(/dist/work/web/portfolio.png);
+    }
+    &--3{
+      background-image: url(/dist/work/web/rwd.png);
+    }
+    &--4{
+      background-image: url(/dist/work/web/cafe-nomad.png);
+    }
+    &--5{
+      background-image: url(/dist/work/web/c.png);
+    }
+    &--6{
+      background-image: url(/dist/work/graphic/taipei.png);
+    }
+    &--7{
+      background-image: url(/dist/work/graphic/icon.png);
+    }
+    &--8{
+      background-image: url(/dist/work/graphic/book.png);
+    }
+    &--9{
+      background-image: url(/dist/work/graphic/font.png);
+    }
+    &--10{
+      background-image: url(/dist/work/graphic/farm.png);
+    }
+    &--11{
+      background-image: url(/dist/work/graphic/vagina.png);
+    }
+    &--12{
+      background-image: url(/dist/work/toast.png);
+    }
+  }
+
+  .works{
+    margin: -3px;
+    @include border();
+    width: 70%;
+    overflow: hidden;  
+  }
+  .work-info{
+    @include border();
+    margin: -3px;
+    width: 30%;
+    color: $white;
+    .work-title{
+      color: $black;
+      border-radius: 40px 40px 0 0;
+      border: 3px solid $white;
+      margin: -3px;
+      height: 15%;
+      background-color: $green;
+      text-align: center;
+      .title-svg{
+        background-image: url(/dist/work-title.svg);
+        @include background(contain);
+        height: 70%;
+        width: 70%;
+        @include center();
+      }
+    }
+    .work-detail{
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-basis: 20px;
+      h1,h2{
+        color: $green;
+      }
+      p{
+        line-height: 1.8;
+        margin-top: 10px;
+      }
+      li{
+        margin-bottom: 40px;
+      }
+    }
+    .work-link{
+      background-image: url(/dist/link.svg);
+      @include background(contain);
+      width: 120px;
+      height: 120px;
+      position: absolute;
+      right: 40px;
+      bottom: 40px;
+    }
+
+  }
+}
+
+/* -------------------------- *\
+	Loading
+\* -------------------------- */
+.enter {
+  background: $black;
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  z-index: 10001;
+  display: none;
+
+  .enter-box {
+    @include verticalCenter();
+    width: 60vh;
+    height: 100vh;
+    display: flex;
+  }
+}
+.loading{
+  background: $black;
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  z-index: 99999;
+  .loading-box{
+    width: 100%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .counter {
+      text-align: center;
+      margin-top: -80px;
+    }
+    
+    .counter p {
+      font-size: 40px;
+      font-weight: 100;
+    }
+    
+    .counter h3 {
+      color: $white;
+      // font-size: 60px;
+      margin-top: 20px;
+    }
+    
+    .counter hr {
+      border: none;
+      height: 1px;
+    }
+    
+    .counter {
+      position: relative;
+      width: 100%;
+    }
+    
+    .counter h1.abs {
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+  }
+}
+
+
+
+.matter {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  width: 100%;
+  margin: 0 auto;
+  height: 150%;
+  overflow: hidden;
+  cursor: move; 
+  canvas {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    opacity: 0;
+  }
+  [data-item],[data-contact],[data-about] {
+    --move-x: 0px;
+    --move-y: 0px;
+    --rotate: 0rad;
+    position: absolute;
+    border-radius: 40px;
+    z-index: 2;
+    // background: $orange;
+    transform: translate(-50%, -50%) rotate(var(--rotate));
+    top: var(--move-y);
+    left: var(--move-x);
+    padding: 10px;
+    pointer-events: none;
+    cursor: pointer;  
+    * {
+      pointer-events: all;
+    }
+  }
+  [data-contact]{
+    padding: 2vw;
+    border-radius: 100px;
+  }
+  .box-about {
+    width: 20vw;
+    height: 20vw;
+    @include background(contain);
+  } 
+  .box-web {
+    background: $orange;
+  }
+  .box-graphic {
+    background: $blue;
+  }
+  .box-illustrate{
+    background: $yellow;
+  }
+  
+  .work-box{
+    border-radius: 30px;
+    border: 2px solid $black;
+    min-width: 180px;
+    min-height: 180px;
+    @include background(contain);
+  }
+}
+
+.input-group {
+  background: white;
+  padding: 15px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+label {
+  text-transform: uppercase;
+  color: black;
+  font-weight: 800;
+  font-size: 30px;
+  display: block;
+}
+
+input {
+  border: none;
+  background: none;
+  border-bottom: 2px solid black;
+  width: 100%;
+  color: black;
+  font-weight: 800;
+  font-size: 30px;
+  outline: none;
+  color: #555;
+  
+  &::placeholder {
+    color: #555;
+  }
+}
+
+.product {
+  width: 250px;
+  background: #000;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: inital;
+  
+  .image {
+    position: relative;
+    padding-top: 80%;
+    width: 100%;
+  }
+
+  
+  h4 {
+    color: white;
+    font-size: 20px;
+    padding: 10px 10px 15px;
+    text-align: center;
+  }
+  
+}
+
+.marqee {
+  width: 500px;
+  padding: 20px 0;
+  background: teal;
+  color: white;
+  font-size: 50px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 5px;
+  
+  div {
+    position: relative;
+    width: max-content;
+    animation: marquee 15s linear infinite;
+    
+    span {
+      margin: 0 70px 0 0;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.contact{
+  .contact-title{
+    z-index: 99;
+    background-color: $green;
+    background-image: url(/dist/contact.svg);
+    @include background(50vw);
+    @include border();
+    background-position: 60px;
+    height: 25%;
+  }
+  .contact-box{
+    display: flex;
+    flex-direction: row;
+    height: 75%;
+    .contacts{
+      @include border();
+      height: 100%;
+      width: 60%;
+      
+      .box-contact {
+        font-size: 3vw;
+        &--0{
+        background: $green;
+        }
+        &--1{
+          background: $yellow;
+          white-space:nowrap;
+        }
+        &--2{
+          background: $orange;
+        }
+        &--3{
+          padding: 0;
+          border-radius: 0; 
+          a{
+            background-image: url(/dist/behance.svg);
+            @include background(contain);
+            min-height: 7vw;
+            min-width: 7vw;
+            display: block;
+          }
+        }
+        &--4{
+          padding: 0;
+          border-radius: 0; 
+          a{
+            background-image: url(/dist/linkedln.svg);
+            @include background(contain);
+            min-height: 7vw;
+            min-width: 7vw;
+            display: block;
+          }
+        }
+      }
+    }
+    .contact-vector{
+      @include border();
+      height: 100%;
+      width: 40%;
+      .vector{
+        background-image: url(/dist/closeeye.svg);
+        @include background(contain);
+        width: 60%;
+        height: 60%;
+        @include center();
+        transition: all 0.2s;
+        &.active{
+        height: 100%;
+
+          background-image: url(/dist/openeye.svg);
+        }
+      }
+    }
+  }
+}
