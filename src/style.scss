@@ -138,8 +138,11 @@ body {
 
   font-size: 24px;
   margin-right: 25px;
-
+  transition: all 0.3s;
   &.active{
+    color: $green;
+  }
+  &:hover{
     color: $green;
   }
   .btn-link{
@@ -157,7 +160,7 @@ body {
     &-1{
       @include border();
       margin-top: 97px;
-      height: 120%;
+      height: calc(80vw - 100px);
       background: rgb(217,217,217);
       // background: linear-gradient(180deg, rgba(217,217,217,1) 0%, rgba(217,217,217,1) 40%, rgba(217,255,137,1) 60%, rgba(217,255,137,1) 100%);
       background: $black;
@@ -213,7 +216,7 @@ body {
     }
   }
   .container{
-    padding: 60px;
+    padding: 4%;
   }
 }
 @keyframes marqueeLeft{
@@ -233,7 +236,7 @@ body {
   height: 100px;
   width: 100%;
   z-index: 10001;
-  padding: 40px 60px;
+  padding: 40px 4%;
   border: 3px solid #fff;
   border-radius: 40px;
   background: $black;
@@ -339,8 +342,9 @@ body {
   .about-para{
     color: $white;
     margin-top: 40px;
-    font-size: 2.3vw;
+    font-size: 2.5vw;
     font-weight: 500;
+    width: 80%;
     line-height: 2;
     .about-item{
       @include background(contain);
@@ -430,7 +434,7 @@ body {
       }
     }
     .work-detail{
-      padding: 60px 40px;
+      padding: 4% 40px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -520,7 +524,7 @@ body {
     
     .counter h3 {
       color: $white;
-      // font-size: 60px;
+      // font-size: 4%;
       margin-top: 20px;
     }
     
@@ -620,7 +624,7 @@ body {
     background-image: url("../dist/contact.svg");
     @include background(50vw);
     @include border();
-    background-position: 60px;
+    background-position: 4%;
     height: 25%;
   }
   .contact-box{

@@ -115,9 +115,15 @@ body {
           align-items: center;
   font-size: 24px;
   margin-right: 25px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn-box.active {
+  color: #BDFB0F;
+}
+
+.btn-box:hover {
   color: #BDFB0F;
 }
 
@@ -142,7 +148,7 @@ body {
   border: 3px solid #fff;
   border-radius: 40px;
   margin-top: 97px;
-  height: 120%;
+  height: calc(80vw - 100px);
   background: #d9d9d9;
   background: #000;
   overflow: hidden;
@@ -211,7 +217,7 @@ body {
 }
 
 .wrapper .container {
-  padding: 60px;
+  padding: 4%;
 }
 
 @-webkit-keyframes marqueeLeft {
@@ -241,7 +247,7 @@ body {
   height: 100px;
   width: 100%;
   z-index: 10001;
-  padding: 40px 60px;
+  padding: 40px 4%;
   border: 3px solid #fff;
   border-radius: 40px;
   background: #000;
@@ -374,8 +380,9 @@ body {
 .about .about-para {
   color: #fff;
   margin-top: 40px;
-  font-size: 2.3vw;
+  font-size: 2.5vw;
   font-weight: 500;
+  width: 80%;
   line-height: 2;
 }
 
@@ -495,7 +502,7 @@ body {
 }
 
 .work-container .work-info .work-detail {
-  padding: 60px 40px;
+  padding: 4% 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -731,7 +738,7 @@ body {
   background-size: 50vw;
   border: 3px solid #fff;
   border-radius: 40px;
-  background-position: 60px;
+  background-position: 4%;
   height: 25%;
 }
 
