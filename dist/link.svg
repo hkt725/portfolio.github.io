@@ -1,4 +1,9 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M26.9229 50.0349L72.1152 50.0349M72.1152 50.0272C63.255 50.0272 56.0777 41.8361 56.0777 31.7308M72.1152 49.9729C63.255 49.9729 56.0777 58.1641 56.0777 68.2693" stroke="white" stroke-width="3" stroke-miterlimit="10"/>
-<rect x="1.5" y="1.5" width="97" height="97" rx="48.5" stroke="white" stroke-width="3"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+</style>
+<path class="st0" d="M26.9,50h45.2 M72.1,50c-8.9,0-16-8.2-16-18.3 M72.1,50c-8.9,0-16,8.2-16,18.3"/>
 </svg>

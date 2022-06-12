@@ -707,7 +707,7 @@ $(document).ready(function () {
 
     document.querySelectorAll(".btn-wrapper button").forEach((btn, index) => {
     btn.addEventListener("click", () => {
-        gsap.to(window, { duration: 1.5, scrollTo: { y: "#section" + (index + 1), offsetY: -70 } });
+        gsap.to(window, { duration: 1.5, scrollTo: { y: "#section" + (index + 1), offsetY:100 } });
     });
     });
     document.getElementById("btn-top").addEventListener("click", () => {
