@@ -125,7 +125,7 @@ let works = [
         intro: '',
         credit: `設計｜Kai Ting Hsu`,
         date:'2022/06/10',
-        href:'https://www.behance.net/gallery/120475525/_'
+        href:'https://www.behance.net/gallery/145855909/ITS-MY-VAGINA'
     },
     {
         class: 'work-box--11',
