@@ -77,7 +77,7 @@ let works = [
         intro: '現有咖啡廳搜尋網站redesign，將搜尋功能放在第一屏，使用者進入後能最快速的搜尋想去的咖啡廳，並以全屏滾動網頁使各頁的資訊功能更加簡潔明瞭。',
         credit: `網頁主視覺｜Kai Ting Hsu`+ newline + `網頁設計｜Kai Ting Hsu / Tenten`,
         date:'2021/06/01',
-        href:''
+        href:'https://hkt725.github.io/cafe/cafenomad.html'
     },
     {
         class: 'work-box--5',
