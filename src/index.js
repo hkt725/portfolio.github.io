@@ -1,15 +1,49 @@
-// let scrollY = window.scrollY
-//     const tween = gsap.timeline()
-//     // 
-//     tween.to( addWebs(), scrollTrigger: {
-//     scrub:true,
-//     trigger: ".section-2",
-//     duration: {min: 0.2, max: 3}, 
-//     ease: "power0.inOut",
-//     start: "40% 90%",
-//     end: "100% 90%",
-//     },
-// }) 
+let curs = document.querySelector(".cursor");
+document.addEventListener("mousemove", (e) => {
+    let x = e.clientX;
+    let y = e.clientY;
+    curs.style.left = x - 25 + "px";
+    curs.style.top = y - 25 + "px";
+});
+
+let images = document.querySelectorAll(".about-title");
+let servicesImages = [
+    "url('../dist/kai.png')",
+];
+
+let pointers = document.querySelectorAll(".about-item");
+let servicesPointers = [
+    "url('../dist/click.svg')",
+    "url('../dist/click.svg')",
+    "url('../dist/click.svg')",
+    "url('../dist/click.svg')",
+    "url('../dist/click.svg')",
+    "url('../dist/click.svg')"
+];
+
+images.forEach((image, i) => {
+    image.addEventListener("mouseover", (e) => {
+        curs.classList.add("cursor-image-show");
+        curs.style.backgroundImage = servicesImages[i];
+    });
+    image.addEventListener("mouseleave", (e) => {
+        curs.classList.remove("cursor-image-show");
+        curs.style.backgroundImage = "none";
+    });
+});
+
+pointers.forEach((image, i) => {
+    image.addEventListener("mouseover", (e) => {
+        curs.classList.add("cursor-pointer-show");
+        curs.style.backgroundImage = servicesPointers[i];
+    });
+    image.addEventListener("mouseleave", (e) => {
+        curs.classList.remove("cursor-pointer-show");
+        curs.style.backgroundImage = "none";
+    });
+});
+
+
 let works = [
     {
         class: 'work-box--0',
@@ -87,15 +121,33 @@ function initMatter (matterHolder) {
     
     createBoundingBox();
     addMouse();
-    addWebs();
-    addContacts();
+    // addWebs();
+    // addContacts();
+
     $("body").on("click", function (event) {
-        console.log($(event.target))
         if ($(event.target).hasClass('about-item')) {
             addAbouts();
         }
+    });
+
+    ScrollTrigger.create({
+        trigger: '.works',
+        duration: {min: 0.2, max: 3}, 
+        ease: "power0.inOut",
+        onEnter: addWebs,
+        once:true,
+        start: "50% 100%",
+    });
+    ScrollTrigger.create({
+        trigger: '.contacts',
+        duration: {min: 0.2, max: 3}, 
+        ease: "power0.inOut",
+        onEnter: addContacts,
+        once:true,
+        start: "50% 100%",
 
     });
+      
     const gravity = 0.5
     engine.world.gravity.y = gravity
     Matter.Runner.run(engine)

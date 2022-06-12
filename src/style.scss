@@ -300,9 +300,6 @@ body {
     @include background(contain);
     width: 35vw;
     height: 8vw;
-    cursor: url("../dist/kai.png") 36 36, auto;
-    --cursor-size: 100px;
-    
   }
   .about-para{
     color: $white;
@@ -316,7 +313,7 @@ body {
       width: 8vw;
       display: inline-block;
       transform: translate(0, 30%);
-      cursor: url("../dist/click.svg") 36 36, pointer ;
+      cursor: pointer;
       z-index: 1;
     }
   }
@@ -724,5 +721,54 @@ input {
         }
       }
     }
+  }
+}
+
+.cursor {
+  top: -100px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid $green;
+  border-radius: 50%;
+  position: fixed;
+  // box-shadow: 2px -3px 11px -1px rgba(181, 80, 135, 0.64);
+  pointer-events: none;
+  transition: all 0.1s linear, top 0ms linear, left 0ms ease-in-out;
+  z-index: 15;
+}
+
+.cursor-image-show {
+  width: 200px;
+  height: 300px;
+  top: auto;
+  left: auto;
+  border-radius: 0;
+  transform: translate(-40%, -50%);
+  background-size: cover;
+  transition: all 0.2s linear, top 0ms linear, left 0ms ease-in-out;
+  border: none;
+  mix-blend-mode: normal;
+  background-size: 100;
+}
+
+.cursor-pointer-show {
+  width: 200px;
+  height: 200px;
+  top: auto;
+  left: auto;
+  border-radius: 0;
+  background-size: cover;
+  transition: all 0.2s linear, top 0ms linear, left 0ms ease-in-out;
+  border: none;
+  mix-blend-mode: normal;
+  background-size: 100;
+  animation: rotate  5s linear infinite;
+}
+@keyframes rotate {
+  0%{
+    transform: translate(-40%, -50%) rotate(0deg);
+  }
+  100%{
+    transform: translate(-40%, -50%) rotate(360deg);
   }
 }

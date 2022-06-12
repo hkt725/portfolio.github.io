@@ -320,8 +320,6 @@ body {
   background-size: contain;
   width: 35vw;
   height: 8vw;
-  cursor: url("../dist/kai.png") 36 36, auto;
-  --cursor-size: 100px;
 }
 
 .about .about-para {
@@ -341,7 +339,7 @@ body {
   display: inline-block;
   -webkit-transform: translate(0, 30%);
           transform: translate(0, 30%);
-  cursor: url("../dist/click.svg") 36 36, pointer;
+  cursor: pointer;
   z-index: 1;
 }
 
@@ -870,5 +868,72 @@ input::placeholder {
 .contact .contact-box .contact-vector .vector.active {
   height: 100%;
   background-image: url("../dist/openeye.svg");
+}
+
+.cursor {
+  top: -100px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #BDFB0F;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  -webkit-transition: all 0.1s linear, top 0ms linear, left 0ms ease-in-out;
+  transition: all 0.1s linear, top 0ms linear, left 0ms ease-in-out;
+  z-index: 15;
+}
+
+.cursor-image-show {
+  width: 200px;
+  height: 300px;
+  top: auto;
+  left: auto;
+  border-radius: 0;
+  -webkit-transform: translate(-40%, -50%);
+          transform: translate(-40%, -50%);
+  background-size: cover;
+  -webkit-transition: all 0.2s linear, top 0ms linear, left 0ms ease-in-out;
+  transition: all 0.2s linear, top 0ms linear, left 0ms ease-in-out;
+  border: none;
+  mix-blend-mode: normal;
+  background-size: 100;
+}
+
+.cursor-pointer-show {
+  width: 200px;
+  height: 200px;
+  top: auto;
+  left: auto;
+  border-radius: 0;
+  background-size: cover;
+  -webkit-transition: all 0.2s linear, top 0ms linear, left 0ms ease-in-out;
+  transition: all 0.2s linear, top 0ms linear, left 0ms ease-in-out;
+  border: none;
+  mix-blend-mode: normal;
+  background-size: 100;
+  -webkit-animation: rotate  5s linear infinite;
+          animation: rotate  5s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: translate(-40%, -50%) rotate(0deg);
+            transform: translate(-40%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-40%, -50%) rotate(360deg);
+            transform: translate(-40%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: translate(-40%, -50%) rotate(0deg);
+            transform: translate(-40%, -50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(-40%, -50%) rotate(360deg);
+            transform: translate(-40%, -50%) rotate(360deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */
