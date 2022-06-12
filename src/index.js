@@ -9,11 +9,11 @@ document.addEventListener("mousemove", (e) => {
 
 let images = document.querySelectorAll(".about-title");
 let servicesImages = [
-    "url('../dist/kai.png')",
+    "url('dist/kai.png')",
 ];
 
 let pointers = document.querySelectorAll(".pointer-item");
-let servicesPointer = "url('../dist/click.svg')"
+let servicesPointer = "url('dist/click.svg')"
 
 images.forEach((image, i) => {
     image.addEventListener("mouseover", (e) => {
