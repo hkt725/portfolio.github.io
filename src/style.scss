@@ -589,6 +589,9 @@ body {
       pointer-events: all;
     }
   }
+  [data-about]{
+    border-radius: 0;
+  }
   [data-contact]{
     padding: 2vw;
     border-radius: 100px;
@@ -757,6 +760,7 @@ body {
 
 /* phones */
 @media (max-width: 576px) { 
+  
   .cursor{
     display: none;
   }
@@ -791,7 +795,11 @@ body {
       .about-item{
         height: 6vw;
         width: 15vw;
+        &:first-child{
+          animation: shake 0.5s linear infinite;
+        }
       }
+      
     }
   }
   .work-container{
@@ -807,6 +815,10 @@ body {
       min-width: 120px;
       min-height: 120px;
     }
+    .box-about {
+      width: 35vw;
+      height: 35vw;
+    } 
   }
   .contact{
     .contact-title{
@@ -835,3 +847,15 @@ body {
   }
  }
  
+
+@keyframes shake {
+  0% {
+    transform: translate(3px, 0);
+  }
+  50% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

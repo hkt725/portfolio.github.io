@@ -694,6 +694,10 @@ body {
   pointer-events: all;
 }
 
+.matter [data-about] {
+  border-radius: 0;
+}
+
 .matter [data-contact] {
   padding: 2vw;
   border-radius: 100px;
@@ -940,6 +944,10 @@ body {
     height: 6vw;
     width: 15vw;
   }
+  .about .about-para .about-item:first-child {
+    -webkit-animation: shake 0.5s linear infinite;
+            animation: shake 0.5s linear infinite;
+  }
   .work-container .works {
     width: 100%;
   }
@@ -949,6 +957,10 @@ body {
   .matter .work-box {
     min-width: 120px;
     min-height: 120px;
+  }
+  .matter .box-about {
+    width: 35vw;
+    height: 35vw;
   }
   .contact .contact-title {
     background-size: 75vw;
@@ -974,6 +986,36 @@ body {
   .contact .contact-box .contact-vector {
     height: 100px;
     width: 100%;
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(3px, 0);
+            transform: translate(3px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-3px, 0);
+            transform: translate(-3px, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(3px, 0);
+            transform: translate(3px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-3px, 0);
+            transform: translate(-3px, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
 }
 /*# sourceMappingURL=style.css.map */
