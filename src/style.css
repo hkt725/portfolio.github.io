@@ -540,8 +540,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 120px;
-  height: 120px;
+  width: 10vw;
+  height: 10vw;
   position: absolute;
   right: 40px;
   bottom: 40px;
@@ -899,6 +899,73 @@ body {
   100% {
     -webkit-transform: translate(-40%, -50%) rotate(360deg);
             transform: translate(-40%, -50%) rotate(360deg);
+  }
+}
+
+/* Extra large devices */
+/* desktops */
+/* tablets */
+/* phones */
+@media (max-width: 576px) {
+  .navbar {
+    top: auto;
+    bottom: 0;
+  }
+  .wrapper .container {
+    padding: 6%;
+  }
+  .wrapper .section-1 {
+    margin-top: 0;
+    height: calc(100% - 97px);
+  }
+  .wrapper .section-3 {
+    height: 100%;
+  }
+  .about .about-title {
+    width: 70vw;
+  }
+  .about .about-para {
+    width: 100%;
+    font-size: 3.5vw;
+  }
+  .about .about-para .about-item {
+    height: 6vw;
+    width: 15vw;
+  }
+  .work-container .works {
+    width: 100%;
+  }
+  .work-container .work-info {
+    display: none;
+  }
+  .matter .work-box {
+    min-width: 120px;
+    min-height: 120px;
+  }
+  .contact .contact-title {
+    background-size: 75vw;
+    background-position: 16%;
+  }
+  .contact .contact-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact .contact-box .contacts {
+    width: 100%;
+    height: calc(100% - 100px);
+  }
+  .contact .contact-box .contacts .box-contact {
+    font-size: 7vw;
+  }
+  .contact .contact-box .contacts .box-contact--3 a, .contact .contact-box .contacts .box-contact--4 a {
+    min-width: 15vw;
+    min-height: 15vw;
+  }
+  .contact .contact-box .contact-vector {
+    height: 100px;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */
