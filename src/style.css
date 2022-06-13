@@ -907,6 +907,14 @@ body {
 /* tablets */
 /* phones */
 @media (max-width: 576px) {
+  .cursor {
+    display: none;
+  }
+  .nav-logo {
+    background-image: url("../dist/logo-s.svg");
+    width: 40px;
+    height: 200%;
+  }
   .navbar {
     top: auto;
     bottom: 0;
