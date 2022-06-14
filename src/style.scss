@@ -161,7 +161,7 @@ body {
     &-1{
       @include border();
       margin-top: 97px;
-      height: calc(80vw - 100px);
+      height: calc(70vw - 100px);
       background: rgb(217,217,217);
       // background: linear-gradient(180deg, rgba(217,217,217,1) 0%, rgba(217,217,217,1) 40%, rgba(217,255,137,1) 60%, rgba(217,255,137,1) 100%);
       background: $black;

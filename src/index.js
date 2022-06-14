@@ -214,6 +214,7 @@ function initMatter (matterHolder) {
     $("body").on("click", function (event) {
         if ($(event.target).hasClass('about-item')) {
             addAbouts();
+            $(".matter-about").css("z-index", "3")
         }
     });
 
