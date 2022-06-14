@@ -910,7 +910,7 @@ body {
 /* desktops */
 /* tablets */
 /* phones */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .cursor {
     display: none;
   }
