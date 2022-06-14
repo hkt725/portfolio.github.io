@@ -764,9 +764,12 @@ body {
   .cursor{
     display: none;
   }
+  .navbar{
+    padding: 40px 6%;
+  }
   .nav-logo {
     background-image: url("../dist/logo-s.svg");
-    width: 40px;
+    width: 20px;
     height: 200%;
   }
   .navbar{
