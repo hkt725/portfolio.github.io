@@ -41,17 +41,17 @@ const newline = "\r\n";
 let works = [
     {
         class: 'work-box--0',
-        title: '版塊六週年線上展',
+        title: 'Block Studio - 6th Anniversary',
         intro: `自從疫情開始對線上展需求增加，版塊意圖跳脫以往傳統對線上展的想像，將網站與線上展做更好的結合與觀展體驗。在海上有許多的島嶼，所有的島嶼都是版塊的一部份，利用游標動態的座標系統，可以探索整個版塊的展覽世界。`+ newline +`註：以電腦觀看獲得最佳體驗。`,
-        credit: `網頁設計｜Kai Ting Hsu / Roizi Lu` + newline + `程式開發｜Kai Ting Hsu / Roizi Lu`,
+        credit: `Web Design｜Kai Ting Hsu / Roizi Lu` + newline + `Web Development｜Kai Ting Hsu / Roizi Lu`,
         date:'2021/08/30',
         href:'https://blockstudio.tw/display/2021intern-web/'
     },
     {
         class: 'work-box--1',
-        title: '斤一斤',
+        title: 'One Taiwan Catty 斤一斤',
         intro: '「一台斤食材的量」是大多數現代人在逛市場時會遇到的最大問題。鑑於這點，期望藉由沈浸式行動網站——「斤一斤」的建置，幫助使用者快速了解「一台斤的食材」可轉換成的料理份數，並以3D建模呈現美味的食物與料理造型。'+ newline +`註：以手機觀看獲得最佳體驗。`,
-        credit: `網頁設計 / 3D建模｜ `+ newline + `Kai Ting Hsu / YUN EN TSAI`+ newline + `JUN NI HAO / YU XIANG CHEN` + newline + `程式開發｜Kai Ting Hsu`,
+        credit: `Web Design / 3D建模｜ `+ newline + `Kai Ting Hsu / YUN EN TSAI`+ newline + `JUN NI HAO / YU XIANG CHEN` + newline + `Web Development｜Kai Ting Hsu`,
         date:'2021/05/08',
         href:'http://onetaiwancatty.com/'
     },
@@ -59,15 +59,15 @@ let works = [
         class: 'work-box--2',
         title: 'Kai Ting Hsu Portfolio 2021',
         intro: `個人作品網站，結合插畫呈現個人特色，使面試者能快速認識我，並使用小遊戲增加互動。作品以卡牌翻頁呈現，翻頁後為作品詳細資訊，點擊後能觀看更多內容。`+ newline +`註：以電腦觀看獲得最佳體驗。`,
-        credit: `網頁設計｜Kai Ting Hsu`+ newline + `程式開發｜Kai Ting Hsu`,
+        credit: `Web Design｜Kai Ting Hsu`+ newline + `Web Development｜Kai Ting Hsu`,
         date:'2021/06/10',
         href:'https://hkt725.github.io/'
     },
     {
         class: 'work-box--3',
-        title: 'HPV 8成與你有關',
+        title: 'HPV Cancer 886',
         intro: '將衛教數據圖表轉換為一頁式網站，結合插畫動態呈現資訊。',
-        credit: `網頁設計｜Tenten / Kai Ting Hsu `+ newline + `程式開發｜Tenten`,
+        credit: `Web Design｜Tenten / Kai Ting Hsu `+ newline + `Web Development｜Tenten`,
         date:'2021/11/10',
         href:'https://www.hpvcancerbye.com/'
     },
@@ -75,31 +75,31 @@ let works = [
         class: 'work-box--4',
         title: 'Cafe Nomad',
         intro: '現有咖啡廳搜尋網站redesign，將搜尋功能放在第一屏，使用者進入後能最快速的搜尋想去的咖啡廳，並以全屏滾動網頁使各頁的資訊功能更加簡潔明瞭。',
-        credit: `網頁主視覺｜Kai Ting Hsu`+ newline + `網頁設計｜Kai Ting Hsu / Tenten`,
+        credit: `Web Design｜Kai Ting Hsu`+ newline + `Web Design｜Kai Ting Hsu / Tenten`,
         date:'2021/06/01',
         href:'https://hkt725.github.io/cafe/cafenomad.html'
     },
     {
         class: 'work-box--5',
-        title: 'C肝衛教網站',
+        title: 'End HCV',
         intro: '將衛教數據圖表轉換為一頁式網站，以日記插畫形式呈現C肝患者心路歷程及衛教資訊。',
-        credit: `網頁設計｜Kai Ting Hsu`+ newline + `程式開發｜Kai Ting Hsu`,
+        credit: `Web Design｜Kai Ting Hsu`+ newline + `Web Development｜Kai Ting Hsu`,
         date:'2021/12/25',
-        href:'https://www.figma.com/proto/FSJFTAKGSrb6ClaDBDUFWc/c%E8%82%9D?page-id=0%3A1&node-id=1%3A17&viewport=697%2C920%2C0.09&scaling=min-zoom&starting-point-node-id=1%3A17&show-proto-sidebar=1'
+        href:'https://www.endhcv.tw/'
     },
     {
         class: 'work-box--6',
-        title: '台北府城',
+        title: 'Tâi-pak Hú-siânn',
         intro: '我出生於古都萬華，在歷史文化的薰陶下，沈迷於生活周遭的古蹟，他們與城市的發展並存著，卻逐漸被世人遺忘，藉由這款趣味伴手禮，將台北府城的美推廣出去。',
-        credit: `設計｜Kai Ting Hsu`,
+        credit: `Design｜Kai Ting Hsu`,
         date:'2020/10/25',
         href:'https://www.behance.net/gallery/118921087/-Tai-pak-Hu-siann'
     },
     {
         class: 'work-box--7',
-        title: '機場指標改造',
+        title: 'Airport Sign System Redesign',
         intro: '',
-        credit: `設計｜Kai Ting Hsu`,
+        credit: `Design｜Kai Ting Hsu`,
         date:'2020/05/25',
         href:'https://www.behance.net/gallery/120483319/_'
     },
@@ -107,15 +107,15 @@ let works = [
         class: 'work-box--8',
         title: '標準字設計',
         intro: '',
-        credit: `設計｜Kai Ting Hsu`,
+        credit: `Design｜Kai Ting Hsu`,
         date:'2020/11/25',
         href:'https://www.behance.net/gallery/119808207/Typography_'
     },
     {
         class: 'work-box--9',
-        title: '清境農場品牌再造',
+        title: 'Qingjing Farm Rebranding',
         intro: '原識別系統在長年發展下，延伸出無統一規範定調識別。近期許多傳統產業轉型皆以年輕、親子族群為主，結合清境農場特色並以童趣、簡約風格發展。',
-        credit: `設計｜Kai Ting Hsu`,
+        credit: `Design｜Kai Ting Hsu`,
         date:'2020/09/25',
         href:'https://www.behance.net/gallery/120475525/_'
     },
@@ -123,7 +123,7 @@ let works = [
         class: 'work-box--10',
         title: `IT'S MY VAGINA!`,
         intro: '',
-        credit: `設計｜Kai Ting Hsu`,
+        credit: `Design｜Kai Ting Hsu`,
         date:'2022/06/10',
         href:'https://www.behance.net/gallery/145855909/ITS-MY-VAGINA'
     },
@@ -131,7 +131,7 @@ let works = [
         class: 'work-box--11',
         title: `Sandwich,Soda,Curry!`,
         intro: '',
-        credit: `插畫｜Kai Ting Hsu`,
+        credit: `Illustrate｜Kai Ting Hsu`,
         date:'2020/06/10',
         href:'https://www.behance.net/gallery/120523509/SandwichSodaCurry'
     },
