@@ -458,6 +458,10 @@ body {
 }
 
 .work-container .work-box--11 {
+  background-image: url("../dist/work/graphic/OZ.png");
+}
+
+.work-container .work-box--12 {
   background-image: url("../dist/work/toast.png");
 }
 

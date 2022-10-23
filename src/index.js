@@ -129,6 +129,14 @@ let works = [
     },
     {
         class: 'work-box--11',
+        title: `AUSTRALIA`,
+        intro: '在進入社會前的最後一個月去了澳洲，獨旅一週、剩下四週與來自不同國家的人生活，日本、義大利、巴西等，除了共通的語言英文外，食物、撞球、酒精讓我們彼此產生交流，以此紀念那美好的一個月，短暫卻開了不少眼界，總有一天要再回到黃金海岸，躺在沙灘上喝著白酒，無所事事度過一整天。',
+        credit: `Illustrate｜Kai Ting Hsu`+ newline + `Logotype｜Kai Ting Hsu`,
+        date:'2020/06/10',
+        href:'https://www.behance.net/gallery/155472801/One-month-in-Australia'
+    },
+    {
+        class: 'work-box--12',
         title: `Sandwich,Soda,Curry!`,
         intro: '',
         credit: `Illustrate｜Kai Ting Hsu`,
